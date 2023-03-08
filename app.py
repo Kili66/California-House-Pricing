@@ -25,6 +25,7 @@ def predict_api():
 
 @app.route('/predict',methods=['POST'])
 def predict():
+    #capture values from and convert them into float and then into list
     data=[float(x) for x in request.form.values()]
     final_input=scalar.transform(np.array(data).reshape(1,-1))
     print(final_input)
